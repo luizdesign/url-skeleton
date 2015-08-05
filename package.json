@@ -1,0 +1,20 @@
+{
+  "name": "url-skeleton",
+  "version": "0.1.0",
+  "description": "Parse url string in a object with the url parts",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/testRunner.js"
+  },
+  "author": "Luiz Kota <luiz.zk@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luizdesign/url-skeleton.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "figlet": "^1.1.1",
+    "istanbul": "^0.3.17",
+    "qunit": "^0.7.6"
+  }
+}
