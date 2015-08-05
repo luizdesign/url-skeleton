@@ -67,6 +67,10 @@ For contribute with this project, create a fork in github <https://github.com/lu
 
 
 ## Changelog
+**Version 0.1.2: 2015/08/05**
+* Bug Fix: Accepting query with array parameter (?test[0]=1) like a valid url. 
+* Bug Fix: .getQuery() recognizing query with array parameter (?test[0]=1).
+
 **Version 0.1.1: 2015/08/05**
 * Bug Fix: Accepting "/" like a valid url
 
