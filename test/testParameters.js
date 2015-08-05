@@ -129,5 +129,10 @@ test(
             [],
             "Passing /ok/?#test like parameter, return a empty array"
         );
+        deepEqual(
+            UrlSkeleton.getParameters("/"),
+            [],
+            "Passing / like parameter, return a empty array"
+        );
     }
 );

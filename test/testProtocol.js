@@ -109,5 +109,10 @@ test(
             null,
             "Passing /skeleton/?v=1&b=2#test like parameter, return null"
         );
+        strictEqual(
+            UrlSkeleton.getProtocol("/"),
+            null,
+            "Passing / like parameter, return null"
+        );
     }
 );
