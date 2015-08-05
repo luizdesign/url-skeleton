@@ -119,5 +119,10 @@ test(
             "/ok/",
             "Passing /ok?test=1 like parameter, return /ok"
         );
+        strictEqual(
+            UrlSkeleton.getPath("/"),
+            "/",
+            "Passing / like parameter, return /"
+        );
     }
 );

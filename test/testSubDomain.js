@@ -110,6 +110,11 @@ test(
             "Passing /skeleton/?v=1&b=2#test like parameter, return null"
         );
         strictEqual(
+            UrlSkeleton.getSubDomain("/"),
+            null,
+            "Passing / like parameter, return null"
+        );
+        strictEqual(
             UrlSkeleton.getSubDomain("www.url-skeleton.com"),
             "www",
             "Passing www.url-skeleton.com like parameter, return the string www"

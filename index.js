@@ -1,7 +1,7 @@
 function validationParameter(url) {
     var code = null,
         message = null,
-        urlRegex = /^((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=]+$/;
+        urlRegex = /^(((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=]+|\/)$/;
 
     if (!url) {
         code = 1;
@@ -114,8 +114,12 @@ module.exports = {
         if (validation.errorCode) {
             throw validation.errorMessage;
         } else {
-            path = url.match(pathRegex);
-            path = (path) ? path[0].replace(/[\?#]$/, "") : null;
+            if (url !== "/") {
+                path = url.match(pathRegex);
+                path = (path) ? path[0].replace(/[\?#]$/, "") : null;
+            } else {
+                path = url;
+            }
         }
 
         return path;

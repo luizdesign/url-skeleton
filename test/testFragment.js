@@ -124,5 +124,10 @@ test(
             null,
             "Passing /skeleton/ like parameter, return null"
         );
+        strictEqual(
+            UrlSkeleton.getFragment("/"),
+            null,
+            "Passing / like parameter, return null"
+        );
     }
 );

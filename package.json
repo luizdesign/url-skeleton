@@ -1,6 +1,6 @@
 {
   "name": "url-skeleton",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse url string in a object with the url parts",
   "main": "index.js",
   "scripts": {

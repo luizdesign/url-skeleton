@@ -244,5 +244,20 @@ test(
             },
             "Passing /ok/?#test like parameter, return a object"
         );
+        deepEqual(
+            UrlSkeleton.getUrlSkeleton("/"),
+            {
+                protocol: null,
+                domain: null,
+                subdomain: null,
+                domainname: null,
+                port: null,
+                path: "/",
+                query: null,
+                parameters: [],
+                fragment: null
+            },
+            "Passing / like parameter, return a object"
+        );
     }
 );

@@ -115,6 +115,11 @@ test(
             "Passing www.url-skeleton.com/ok like parameter, return null"
         );
         strictEqual(
+            UrlSkeleton.getQuery("/"),
+            null,
+            "Passing / like parameter, return null"
+        );
+        strictEqual(
             UrlSkeleton.getQuery("/ok/?test=1"),
             "test=1",
             "Passing /ok?test=1 like parameter, return the string test=1"

@@ -119,5 +119,10 @@ test(
             null,
             "Passing static.url-skeleton.com like parameter, return null"
         );
+        strictEqual(
+            UrlSkeleton.getPort("/"),
+            null,
+            "Passing / like parameter, return null"
+        );
     }
 );
