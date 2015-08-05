@@ -88,6 +88,11 @@ test(
             "80",
             "Passing //static.skeleton.com:80?v=1&b=2#test like parameter, return the string 80"
         );
+        strictEqual(
+            UrlSkeleton.getPort("https://safe.url-skeleton.com/?p[teste]=1"),
+            null,
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return null"
+        );
     }
 );
 

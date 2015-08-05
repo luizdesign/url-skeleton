@@ -88,6 +88,11 @@ test(
             "static",
             "Passing //static.skeleton.com:80?v=1&b=2#test like parameter, return the string static"
         );
+        strictEqual(
+            UrlSkeleton.getSubDomain("https://safe.url-skeleton.com/?p[teste]=1"),
+            "safe",
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return the string safe"
+        );
     }
 );
 

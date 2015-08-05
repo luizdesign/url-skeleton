@@ -93,6 +93,11 @@ test(
             null,
             "Passing http://www.url-skeleton.com like parameter, return null"
         );
+        strictEqual(
+            UrlSkeleton.getFragment("https://safe.url-skeleton.com/?p[teste]=1"),
+            null,
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return null"
+        );
     }
 );
 
