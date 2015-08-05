@@ -55,5 +55,12 @@ UrlSkeleton.getUrlSkeleton("https://example.url-skeleton.com:80/example-url-skel
 ```
 
 
+## Testing
+For execute the tests of this module
+```
+npm test
+```
+
+
 ## Contribute
 For contribute with this project, create a fork in github <https://github.com/luizdesign/url-skeleton>
