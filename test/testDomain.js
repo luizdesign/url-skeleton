@@ -88,6 +88,11 @@ test(
             "www.skeleton.com",
             "Passing http://www.skeleton.com:80?v=1&b=2#test like parameter, return the string www.skeleton.com"
         );
+        strictEqual(
+            UrlSkeleton.getDomain("https://safe.url-skeleton.com/?p[teste]=1"),
+            "safe.url-skeleton.com",
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return the string safe.url-skeleton.com"
+        );
     }
 );
 

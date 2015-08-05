@@ -133,6 +133,21 @@ test(
             },
             "Passing http://www.skeleton.com:80/ok/?v=1&b=2#test like parameter, return a object"
         );
+        deepEqual(
+            UrlSkeleton.getUrlSkeleton("https://safe.url-skeleton.com/?p[teste]=1"),
+            {
+                protocol: "https",
+                domain: "safe.url-skeleton.com",
+                subdomain: "safe",
+                domainname: "url-skeleton",
+                port: null,
+                path: null,
+                query: "p[teste]=1",
+                parameters: [{"p[teste]": "1"}],
+                fragment: null
+            },
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return a object"
+        );
     }
 );
 

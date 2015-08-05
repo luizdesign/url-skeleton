@@ -1,7 +1,7 @@
 function validationParameter(url) {
     var code = null,
         message = null,
-        urlRegex = /^(((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=]+|\/)$/;
+        urlRegex = /^(((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=\[\]]+|\/)$/;
 
     if (!url) {
         code = 1;
@@ -126,7 +126,7 @@ module.exports = {
     },
     getQuery: function(url) {
         var validation = validationParameter(url),
-            queryRegex = /\?([\w&=]*)/,
+            queryRegex = /\?([\w&=\[\]]*)/,
             query = null;
 
         if (validation.errorCode) {

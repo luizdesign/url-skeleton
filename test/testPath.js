@@ -88,6 +88,11 @@ test(
             "/ok/",
             "Passing http://www.skeleton.com:80/ok/?v=1&b=2#test like parameter, return the string /ok/"
         );
+        strictEqual(
+            UrlSkeleton.getPath("https://safe.url-skeleton.com/?p[teste]=1"),
+            null,
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return null"
+        );
     }
 );
 

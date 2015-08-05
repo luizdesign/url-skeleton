@@ -88,6 +88,11 @@ test(
             [{"v": "1"}, {"b": "2"}],
             "Passing http://www.skeleton.com:80/ok/?v=1&b=2#test like parameter, return the array [{\"v\": \"1\"}, {\"b\": \"2\"}]"
         );
+        deepEqual(
+            UrlSkeleton.getParameters("https://safe.url-skeleton.com/?p[teste]=1"),
+            [{"p[teste]": "1"}],
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return the array [{\"p[teste]\": \"1\"}]"
+        );
     }
 );
 

@@ -88,6 +88,11 @@ test(
             null,
             "Passing http://www.skeleton.com:80?v=1&b=2#test like parameter, return a empty string"
         );
+        strictEqual(
+            UrlSkeleton.getProtocol("https://safe.url-skeleton.com/?p[teste]=1"),
+            "https",
+            "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return the string https"
+        );
     }
 );
 
