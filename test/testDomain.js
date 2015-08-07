@@ -93,6 +93,11 @@ test(
             "safe.url-skeleton.com",
             "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return the string safe.url-skeleton.com"
         );
+        strictEqual(
+            UrlSkeleton.getDomain("https%3A%2F%2Fstatic.url-skeleton.com%2Ftest%2F%3Ftest%5B42%5D%3Dtrue"),
+            "static.url-skeleton.com",
+            "Passing https%3A%2F%2Fstatic.url-skeleton.com%2Ftest%2F%3Ftest%5B42%5D%3Dtrue like parameter, return the string static.url-skeleton.com"
+        );
     }
 );
 
