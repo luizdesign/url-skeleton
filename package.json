@@ -6,6 +6,10 @@
   "scripts": {
     "test": "node test/testRunner.js"
   },
+  "keywords": [
+    "url",
+    "parse"
+  ],
   "author": "Luiz Kota <luiz.zk@gmail.com>",
   "repository": {
     "type": "git",
