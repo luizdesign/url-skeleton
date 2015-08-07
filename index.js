@@ -1,7 +1,7 @@
 function validationParameter(url) {
     var code = null,
         message = null,
-        urlRegex = /^(((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=\[\]]+|\/)$/;
+        urlRegex = /^(((http(s)?:\/\/|\/\/)?[\w-]+\.|\/\w|#|\?)[\w-\.\/#&?:=\[\]%;+]+|\/)$/;
 
     if (!url) {
         code = 1;
@@ -9,7 +9,7 @@ function validationParameter(url) {
     } else if (typeof url !== "string") {
         code = 2;
         message = "TypeError: url must be of string type";
-    } else if (!urlRegex.test(url)) {
+    } else if (!urlRegex.test(getTreatedUrl(url))) {
         code = 3;
         message = "ContentError: url must be in a valid url format";
     }
@@ -18,6 +18,18 @@ function validationParameter(url) {
         "errorCode": code,
         "errorMessage": message
     }
+}
+
+function getTreatedUrl(url) {
+    var treatedUrl;
+
+    try {
+        treatedUrl = decodeURIComponent(url);
+    } catch (err) {
+        treatedUrl = url;
+    }
+
+    return treatedUrl;
 }
 
 module.exports = {
@@ -44,6 +56,8 @@ module.exports = {
         var validation = validationParameter(url),
             protocol = null;
 
+        url = getTreatedUrl(url);
+
         if (validation.errorCode) {
             throw validation.errorMessage;
         } else if (url.indexOf("://") !== -1) {
@@ -56,6 +70,8 @@ module.exports = {
         var validation = validationParameter(url),
             urlDomainRegex = /^(\/\/|http:\/\/|https:\/\/)?([\w-\.]+)[\/#\?]?/,
             domain = null;
+
+        url = getTreatedUrl(url);
 
         if (validation.errorCode) {
             throw validation.errorMessage;
@@ -70,6 +86,8 @@ module.exports = {
         var validation = validationParameter(url),
             subdomain = null;
 
+        url = getTreatedUrl(url);
+
         if (validation.errorCode) {
             throw validation.errorMessage;
         } else if (this.getDomain(url)) {
@@ -82,6 +100,8 @@ module.exports = {
         var validation = validationParameter(url),
             domainNameRegex = /^(\/\/|http:\/\/|https:\/\/)?[\w-]+\.([\w-]+)\.[\/#\?]?/,
             domainName = null;
+
+        url = getTreatedUrl(url);
 
         if (validation.errorCode) {
             throw validation.errorMessage;
@@ -97,6 +117,8 @@ module.exports = {
             portRegex = /[\w\/]:(\d+)/,
             port = null;
 
+        url = getTreatedUrl(url);
+
         if (validation.errorCode) {
             throw validation.errorMessage;
         } else {
@@ -110,6 +132,8 @@ module.exports = {
         var validation = validationParameter(url),
             pathRegex = /(\/\w[\w-\/]+[\/\?#])/,
             path = null;
+
+        url = getTreatedUrl(url);
 
         if (validation.errorCode) {
             throw validation.errorMessage;
@@ -129,6 +153,8 @@ module.exports = {
             queryRegex = /\?([\w&=\[\]]*)/,
             query = null;
 
+        url = getTreatedUrl(url);
+
         if (validation.errorCode) {
             throw validation.errorMessage;
         } else if (url.indexOf("?") !== -1) {
@@ -141,6 +167,8 @@ module.exports = {
         var validation = validationParameter(url),
             query,
             parameters = [];
+
+        url = getTreatedUrl(url);
 
         if (validation.errorCode) {
             throw validation.errorMessage;
@@ -163,6 +191,8 @@ module.exports = {
     getFragment: function(url) {
         var validation = validationParameter(url),
             fragment = null;
+
+        url = getTreatedUrl(url);
 
         if (validation.errorCode) {
             throw validation.errorMessage;
