@@ -56,9 +56,15 @@ UrlSkeleton.getUrlSkeleton("https://example.url-skeleton.com:80/example-url-skel
 
 
 ## Testing
-For execute the tests of this module
+For execute the all tests of this module
 ```
 npm test
+```
+
+For execute the tests by a specific module
+```
+npm test -- --mod=skeleton // Will execute only the testSkeleton.js tests
+npm test -- --mod=port // Will execute only the testPort.js tests
 ```
 
 
@@ -67,6 +73,9 @@ For contribute with this project, create a fork in github <https://github.com/lu
 
 
 ## Changelog
+**Version 0.1.4: 2015/08/11**
+* Unit test improvement: Run unit test for a specific module
+
 **Version 0.1.3: 2015/08/06**
 * Bug Fix: Accepting encoded url like a valid url
 
