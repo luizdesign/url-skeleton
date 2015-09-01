@@ -73,6 +73,9 @@ For contribute with this project, create a fork in github <https://github.com/lu
 
 
 ## Changelog
+**Version 0.1.5: 2015/09/01**
+* Extracting the logic from module exports, for use in browser
+
 **Version 0.1.4: 2015/08/11**
 * Unit test improvement: Run unit test for a specific module
 

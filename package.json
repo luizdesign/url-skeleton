@@ -1,6 +1,6 @@
 {
   "name": "url-skeleton",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Parse url string in a object with the url parts",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "devDependencies": {
     "figlet": "^1.1.1",
     "istanbul": "^0.3.17",
-    "qunit": "^0.7.6"
+    "qunit": "^0.7.6",
+    "shell-arguments": "^1.0.4"
   }
 }
