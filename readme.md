@@ -1,4 +1,5 @@
-# Url Skeleton
+# Url Skeleton [![Build Status](https://travis-ci.org/luizdesign/url-skeleton.svg?branch=master)](https://travis-ci.org/luizdesign/url-skeleton)
+
 Parse a string of url in a object with some properties: protocol, domain, subdomain, domainname, port, path, query, parameters and fragment.
 
 
