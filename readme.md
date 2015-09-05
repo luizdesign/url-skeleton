@@ -1,4 +1,6 @@
-# Url Skeleton [![Build Status](https://travis-ci.org/luizdesign/url-skeleton.svg?branch=master)](https://travis-ci.org/luizdesign/url-skeleton)
+# Url Skeleton
+[![Build Status](https://travis-ci.org/luizdesign/url-skeleton.svg?branch=master)](https://travis-ci.org/luizdesign/url-skeleton)
+[![Coverage Status](https://coveralls.io/repos/luizdesign/url-skeleton/badge.svg?branch=master&service=github)](https://coveralls.io/github/luizdesign/url-skeleton?branch=master)
 
 Parse a string of url in a object with some properties: protocol, domain, subdomain, domainname, port, path, query, parameters and fragment.
 
