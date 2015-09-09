@@ -83,7 +83,7 @@ test(
                 port: null,
                 path: null,
                 query: null,
-                parameters: [],
+                parameters: {},
                 fragment: "test"
             },
             "Passing http://www.skeleton.com#test like parameter, return a object"
@@ -98,7 +98,7 @@ test(
                 port: "8080",
                 path: "/test/",
                 query: null,
-                parameters: [],
+                parameters: {},
                 fragment: "test"
             },
             "Passing https://www.skeleton.com:8080/test/#test like parameter, return a object"
@@ -113,7 +113,7 @@ test(
                 port: "80",
                 path: "/ok/",
                 query: "v=1&b=2",
-                parameters: [{"v": "1"}, {"b": "2"}],
+                parameters: {"v": "1", "b": "2"},
                 fragment: "test"
             },
             "Passing http://www.skeleton.com:80/ok/?v=1&b=2#test like parameter, return a object"
@@ -128,7 +128,7 @@ test(
                 port: "8180",
                 path: "/test/second-parameter/",
                 query: "v=1&b=2",
-                parameters: [{"v": "1"}, {"b": "2"}],
+                parameters: {"v": "1", "b": "2"},
                 fragment: "url-skeleton"
             },
             "Passing http://www.skeleton.com:80/ok/?v=1&b=2#test like parameter, return a object"
@@ -143,7 +143,7 @@ test(
                 port: null,
                 path: null,
                 query: "p[teste]=1",
-                parameters: [{"p[teste]": "1"}],
+                parameters: {"p": {"teste": "1"}},
                 fragment: null
             },
             "Passing https://safe.url-skeleton.com/?p[teste]=1 like parameter, return a object"
@@ -158,7 +158,7 @@ test(
                 port: null,
                 path: "/test/",
                 query: "test[42]=true",
-                parameters: [{"test[42]": "true"}],
+                parameters: {"test": {"42": "true"}},
                 fragment: "test"
             },
             "Passing https%3A%2F%2Fstatic.url-skeleton.com%2Ftest%2F%3Ftest%5B42%5D%3Dtrue%23test like parameter, return a object"
@@ -179,7 +179,7 @@ test(
                 port: null,
                 path: null,
                 query: "t=1&b=4",
-                parameters: [{"t": "1"}, {"b": "4"}],
+                parameters: {"t": "1", "b": "4"},
                 fragment: "test"
             },
             "Passing ?t-1&b=4#test like parameter, return a object"
@@ -194,7 +194,7 @@ test(
                 port: null,
                 path: null,
                 query: null,
-                parameters: [],
+                parameters: {},
                 fragment: "test"
             },
             "Passing #test like parameter, return a object"
@@ -209,7 +209,7 @@ test(
                 port: null,
                 path: "/skeleton/",
                 query: "v=1&b=2",
-                parameters: [{"v": "1"}, {"b": "2"}],
+                parameters: {"v": "1", "b": "2"},
                 fragment: "test"
             },
             "Passing /skeleton/?v=1&b=2#test like parameter, return a object"
@@ -224,7 +224,7 @@ test(
                 port: null,
                 path: "/ok/",
                 query: null,
-                parameters: [],
+                parameters: {},
                 fragment: null
             },
             "Passing www.url-skeleton.com/ok like parameter, return a object"
@@ -239,7 +239,7 @@ test(
                 port: null,
                 path: "/ok/",
                 query: "test=1",
-                parameters: [{"test": "1"}],
+                parameters: {"test": "1"},
                 fragment: null
             },
             "Passing /ok?test=1 like parameter, return a object"
@@ -254,7 +254,7 @@ test(
                 port: null,
                 path: "/ok/",
                 query: "",
-                parameters: [],
+                parameters: {},
                 fragment: null
             },
             "Passing /ok? like parameter, return a object"
@@ -269,7 +269,7 @@ test(
                 port: null,
                 path: "/unit/test/",
                 query: "",
-                parameters: [],
+                parameters: {},
                 fragment: ""
             },
             "Passing /ok/?#test like parameter, return a object"
@@ -284,7 +284,7 @@ test(
                 port: null,
                 path: "/",
                 query: null,
-                parameters: [],
+                parameters: {},
                 fragment: null
             },
             "Passing / like parameter, return a object"

@@ -166,7 +166,7 @@ this.urlSkeleton = {
     getParameters: function(url) {
         var validation = validationParameter(url),
             query,
-            parameters = [];
+            parameters = {};
 
         url = getTreatedUrl(url);
 
@@ -176,14 +176,59 @@ this.urlSkeleton = {
             query = this.getQuery(url);
 
             if (query && query !== "") {
-                parameters = query.split("&").map(function(value) {
-                    var chaveValor = value.split("="),
-                        newValue = {};
+                query.split("&").forEach(function(value, index) {
 
-                    newValue[chaveValor[0]] = chaveValor[1];
-                    return newValue;
+                    if (!isArray(value)) {
+                        parameters[buildNonArrayParameter(value).key] = buildNonArrayParameter(value).value;
+                    } else if (!parameters[buildArrayParameter(value, parameters, query).key]) {
+                        parameters[buildArrayParameter(value, parameters, query).key] = buildArrayParameter(value, parameters, query).value;
+                    }
+
                 });
             }
+        }
+
+        function isArray(value) {
+            return value.match(/(\w+)\[(\w+)?\]=(\w+)/g);
+        }
+        function buildNonArrayParameter(value) {
+            var keyValue = value.split("=");
+
+            return {
+                "key": keyValue[0],
+                "value": keyValue[1]
+            }
+        };
+        function buildArrayParameter(value, parameters, query) {
+            var key = value.split("[")[0],
+                newValue = {},
+                values = query.match(new RegExp(key + "\\[(\\w+)?\\]=[^&]+", "g"));
+
+            values.forEach(function(subValue) {
+                newValue[getArrayIndex(subValue, newValue)] = subValue.split("=")[1];
+            })
+
+            return {
+                "key": key,
+                "value": newValue
+            }
+        }
+        function getArrayIndex(value, newValue) {
+            var index = value.match(/\[(\w+)\]/);
+
+            if (!index) {
+                if (Object.keys(newValue).length === 0) {
+                    index = 0;
+                } else {
+                    index = parseInt(Object.keys(newValue).sort(function(a, b) {
+                        return a - b;
+                    }).slice(-1)[0]) + 1;
+                }
+            } else {
+                index = index[1];
+            }
+
+            return index;
         }
 
         return parameters;
